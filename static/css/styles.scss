@@ -3,18 +3,20 @@
 $font-stack: 'Poppins', sans-serif;
 $primary-red:hsl(0, 78%, 62%);
 $primary-cyan:hsl(180, 62%, 55%);
-$primary-oragne: hsl(34, 97%, 64%);
+$primary-orange: hsl(34, 97%, 64%);
 $primary-blue:hsl(212, 86%, 64%);
-$neutral-dark-blue:  hsl(234, 12%, 34%);
+$neutral-dark-blue:  rgb(76, 78, 97);
 $neutral-gray-blue:  hsl(229, 6%, 66%);
 $neutral-light-gray: hsl(0, 0%, 98%);
 
 html,body{
     font-family: $font-stack;
     font-size: 15px;
-    font-weight: 200;
+    font-weight: 400;
     color: $neutral-gray-blue;
+    background-color: $neutral-light-gray;
     min-height: 100vh;
+    margin: 0;
 }
 body{
     display: flex;
@@ -26,9 +28,21 @@ main{
     max-width: 375px;
     padding: 2rem 5vw;
 }
+p{
+    margin: 0;
+}
 .cta{
+    text-align: center;
     h3{
         font-weight: 400;
+        color: $neutral-gray-blue;
+    }
+    h1:nth-child(1){
+        font-weight: 200;
+    }
+    h1:nth-child(2){
+        font-weight: 600;
+        color: $neutral-dark-blue;
     }
 }
 
@@ -46,15 +60,39 @@ main{
 
 .box-shadow{
     box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
+  0 2.8px 2.2px rgba(76, 78, 97, 0.034),
+  0 6.7px 5.3px rgba(76, 78, 97, 0.048),
+  0 12.5px 10px rgba(76, 78, 97, 0.06),
+  0 22.3px 17.9px rgba(76, 78, 97, 0.072),
+  0 41.8px 33.4px rgba(76, 78, 97, 0.086)
 ;
 }
 .card{
-    border-top: 2px solid black;
-    
+
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+
+    h3{
+        color: $neutral-dark-blue;
+        margin-bottom: .5rem;
+    }
+
+    img{
+        margin: 2rem 0;
+        height: 65px;
+        width: 65px;
+        align-self: flex-end;
+    }
+}
+
+
+$border-color: $primary-cyan, $primary-red, $primary-orange, $primary-blue;
+
+@for $colIndex from 1 through length($border-color) {
+    .card:nth-of-type(#{$colIndex}) {
+    border-top: .4rem solid (nth($border-color, $colIndex));
+  }
 }
