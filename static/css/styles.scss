@@ -37,6 +37,9 @@ p{
         font-weight: 400;
         color: $neutral-gray-blue;
     }
+    h1{
+        margin: .25rem 0 0;
+    }
     h1:nth-child(1){
         font-weight: 200;
     }
@@ -92,7 +95,32 @@ p{
 $border-color: $primary-cyan, $primary-red, $primary-orange, $primary-blue;
 
 @for $colIndex from 1 through length($border-color) {
-    .card:nth-of-type(#{$colIndex}) {
+    #card-#{$colIndex} {
     border-top: .4rem solid (nth($border-color, $colIndex));
   }
+}
+
+@media only screen and (min-width: 900px){
+    
+    main{
+        max-width: 1200px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cta{
+        align-self: center;
+        display: inline-block;
+        max-width: 600px;
+        padding-bottom: 2rem;
+    }
+    .column-wrapper{
+        display: flex;
+        flex-direction: row;
+    }
+    .column{
+        width: calc((1200px - 1rem) /3);
+        padding: 1rem;
+    }
 }

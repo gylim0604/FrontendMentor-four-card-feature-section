@@ -31,6 +31,9 @@ p {
   font-weight: 400;
   color: #a3a5ae;
 }
+.cta h1 {
+  margin: 0.25rem 0 0;
+}
 .cta h1:nth-child(1) {
   font-weight: 200;
 }
@@ -72,20 +75,46 @@ p {
   align-self: flex-end;
 }
 
-.card:nth-of-type(1) {
+#card-1 {
   border-top: 0.4rem solid #45d3d3;
 }
 
-.card:nth-of-type(2) {
+#card-2 {
   border-top: 0.4rem solid #ea5353;
 }
 
-.card:nth-of-type(3) {
+#card-3 {
   border-top: 0.4rem solid #fcaf4a;
 }
 
-.card:nth-of-type(4) {
+#card-4 {
   border-top: 0.4rem solid #549ef2;
+}
+
+@media only screen and (min-width: 900px) {
+  main {
+    max-width: 1200px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta {
+    align-self: center;
+    display: inline-block;
+    max-width: 600px;
+    padding-bottom: 2rem;
+  }
+
+  .column-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .column {
+    width: calc((1200px - 1rem) /3);
+    padding: 1rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
